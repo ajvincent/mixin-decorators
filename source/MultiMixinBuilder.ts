@@ -10,6 +10,7 @@ import type {
 import type {
   SubclassDecoratorSequence,
 } from "./types/SubclassDecorator.js";
+
 import type {
   ClassDecoratorFunction
 } from "./types/ClassDecoratorFunction.js";

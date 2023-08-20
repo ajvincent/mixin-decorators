@@ -11,14 +11,11 @@
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked"
   ],
-
   "ignorePatterns": [
     "**/*.js",
     "**/*.d.ts",
     "!**/types/*.d.ts"
   ],
-
-
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2022,
