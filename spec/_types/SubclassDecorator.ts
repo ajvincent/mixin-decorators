@@ -53,7 +53,7 @@ describe("Subclass decorators: ", () => {
   }>;
 
   it("A decorator applies static and instance fields correctly", () => {
-    const secondDecorator: SubclassDecorator<typeof FirstClass, SecondStaticAndInstance, false> = function(
+    const secondDecorator: SubclassDecorator<SecondStaticAndInstance, typeof FirstClass, false> = function(
       baseClass: typeof FirstClass,
       context
     ): MixinClass<SecondStaticAndInstance["staticFields"], SecondStaticAndInstance["instanceFields"], typeof FirstClass>
@@ -84,9 +84,9 @@ describe("Subclass decorators: ", () => {
   });
 
   it("A decorator can take arguments", () => {
-    const secondDecorator: SubclassDecorator<typeof FirstClass, SecondStaticAndInstance, [string]> = function(
+    const secondDecorator: SubclassDecorator<SecondStaticAndInstance, typeof FirstClass, [string]> = function(
       middleString: string
-    ): SubclassDecorator<typeof FirstClass, SecondStaticAndInstance, false>
+    ): SubclassDecorator<SecondStaticAndInstance, typeof FirstClass, false>
     {
       return function(
         baseClass: typeof FirstClass,
@@ -120,7 +120,7 @@ describe("Subclass decorators: ", () => {
   });
 
   it("A sequence can have multiple decorators, but only with unique symbol keys", () => {
-    const secondDecorator: SubclassDecorator<typeof FirstClass, SecondStaticAndInstance, false> = function(
+    const secondDecorator: SubclassDecorator<SecondStaticAndInstance, typeof FirstClass, false> = function(
       baseClass: typeof FirstClass,
       context
     ): MixinClass<SecondStaticAndInstance["staticFields"], SecondStaticAndInstance["instanceFields"], typeof FirstClass>
@@ -132,7 +132,7 @@ describe("Subclass decorators: ", () => {
       }
     }
 
-    const thirdDecorator: SubclassDecorator<typeof FirstClass, ThirdStaticAndInstance, false> = function(
+    const thirdDecorator: SubclassDecorator<ThirdStaticAndInstance, typeof FirstClass, false> = function(
       baseClass: typeof FirstClass,
       context
     ): MixinClass<ThirdStaticAndInstance["staticFields"], ThirdStaticAndInstance["instanceFields"], typeof FirstClass>
@@ -145,7 +145,7 @@ describe("Subclass decorators: ", () => {
     }
 
     type DecoratorSequence<Interfaces extends readonly StaticAndInstance<symbol>[]> =
-      SubclassDecoratorSequence<typeof FirstClass, Interfaces, false>;
+      SubclassDecoratorSequence<Interfaces, typeof FirstClass, false>;
 
     expect<
       DecoratorSequence<[SecondStaticAndInstance, ThirdStaticAndInstance]>

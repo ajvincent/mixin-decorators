@@ -35,7 +35,7 @@ function applyAllDecorators<
 >
 (
   this: void,
-  decorators: SubclassDecoratorSequence<Base, Interfaces, false>,
+  decorators: SubclassDecoratorSequence<Interfaces, Base, false>,
   baseClass: Base,
   context: ClassDecoratorContext,
 ) : MultiMixinClass<Interfaces, Base>
@@ -58,7 +58,7 @@ function MixinBuilderInternal<
   Base extends Class<object>,
 >
 (
-  decorators: SubclassDecoratorSequence<Base, Interfaces, false>
+  decorators: SubclassDecoratorSequence<Interfaces, Base, false>
 ) : (_class: Base, context: ClassDecoratorContext) => MultiMixinClass<Interfaces, Base>
 {
   return function(
@@ -82,7 +82,7 @@ function MultiMixinBuilder<
   Base extends Class<object>,
 >
 (
-  decorators: SubclassDecoratorSequence<Base, Interfaces, false>,
+  decorators: SubclassDecoratorSequence<Interfaces, Base, false>,
   baseClass: Base,
 ) : MultiMixinClass<Interfaces, Base>
 {

@@ -22,8 +22,8 @@ import type {
  * @typeParam Added - the static and instance fields to require.
  */
 export type SubclassDecorator<
-  Base extends Class<object>,
   Added extends StaticAndInstance<symbol>,
+  Base extends Class<object>,
   Arguments extends any[] | false
 > = ClassDecoratorFunction<
   Base,
@@ -36,9 +36,9 @@ export type SubclassDecorator<
  * @typeParam Interfaces - the class field interfaces.
  */
 export type SubclassDecoratorSequence<
-  Base extends Class<object>,
   Interfaces extends readonly StaticAndInstance<symbol>[],
+  Base extends Class<object>,
   Arguments extends any[] | false
 > =
   StaticAndInstanceArray<Interfaces> extends never ? never :
-  { [key in keyof Interfaces]: SubclassDecorator<Base, Interfaces[key], Arguments> };
+  { [key in keyof Interfaces]: SubclassDecorator<Interfaces[key], Base, Arguments> };

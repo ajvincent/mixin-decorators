@@ -33,7 +33,7 @@ interface YVector extends StaticAndInstance<typeof YVectorKey> {
   symbolKey: typeof YVectorKey;
 }
 
-const Mixin_XVector: SubclassDecorator<typeof MixinBase, XVector, false> = function(
+const Mixin_XVector: SubclassDecorator<XVector, typeof MixinBase, false> = function(
   this: void,
   _class,
   context
@@ -53,7 +53,7 @@ const Mixin_XVector: SubclassDecorator<typeof MixinBase, XVector, false> = funct
   }
 }
 
-const Mixin_YVector: SubclassDecorator<typeof MixinBase, YVector, false> = function(
+const Mixin_YVector: SubclassDecorator<YVector, typeof MixinBase, false> = function(
   this: void,
   _class
 )
