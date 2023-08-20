@@ -15,16 +15,10 @@
   "ignorePatterns": [
     "**/*.js",
     "**/*.d.ts",
-    "!_*/**/types/**/*.d.ts"
+    "!**/types/*.d.ts"
   ],
 
-  "overrides": [
-    {
-      "files": [
-        "**/*.mts"
-      ]
-    }
-  ],
+
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2022,
