@@ -141,7 +141,9 @@ describe("Mixin class types: ClassDecoratorFunction", () => {
     }
 
     const NST_Decorator: ClassDecoratorFunction<
-      Class<NumberStringType & Invocations, [number]>, Class<WithCounter & NumberStringType & Invocations, [number]>, false
+      Class<NumberStringType & Invocations, [number]>,
+      Class<WithCounter & NumberStringType & Invocations, [number]>,
+      false
     > = function(baseClass, context): Class<WithCounter & NumberStringType & Invocations, [number]>
     {
       void(context);
