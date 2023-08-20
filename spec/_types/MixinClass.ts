@@ -55,6 +55,25 @@ function buildThirdClass<Tail extends string, Length extends number>(tail: Tail,
 	};
 }
 
+type ClassTypeWithDifferentArguments = MixinClass<
+  SecondClassStaticInterface,
+  SecondClass,
+  typeof FirstClass,
+  [myIndex: number, isMiddle: boolean]
+>;
+
+function buildClassWithDifferentArguments(): ClassTypeWithDifferentArguments {
+  return class extends FirstClass {
+    static middle = "center";
+    isMiddle: boolean;
+
+    constructor(myIndex: number, isMissle: boolean) {
+      super(myIndex);
+      this.isMiddle = isMissle;
+    }
+  }
+}
+
 // #endregion test fixtures
 
 it("MixinClass works", () => {
@@ -142,4 +161,9 @@ it("MixinClass works", () => {
   }).toBeTruthy();
   
   expect<ThirdClassType>(buildThirdClass('tail', 16)).toBeTruthy();
+
+  const ClassWithDifferentArguments = buildClassWithDifferentArguments()
+  const fourthObject = new ClassWithDifferentArguments(7, false);
+  expect(fourthObject.index).toBe(7);
+  expect(fourthObject.isMiddle).toBe(false);
 });
