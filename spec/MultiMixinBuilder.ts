@@ -6,7 +6,7 @@ import MultiMixinBuilder, {
   type MultiMixinClass,
 } from "../source/MultiMixinBuilder.js";
 
-import MixinBase from "../source/MixinBase.js";
+import MixinBase from "../fixtures/MixinBase.js";
 
 import {
   XVector,
