@@ -8,7 +8,7 @@
   "scripts": {
     "all": "npm run clean && npm run build && npm run test && npm run eslint",
     "build": "tsc -p ./tsconfig.json",
-    "clean": "rm -rf ./dist fixtures/*.d.ts fixtures/*.js fixtures/*.js.map source/*.d.ts source/*.js source/*.js.map spec/*.d.ts spec/*.js spec/*.js.map spec/_types/*.d.ts spec/_types/*.js spec/_types/*.js.map spec/support/*.d.ts spec/support/*.js spec/support/*.js.map",
+    "clean": "rm -rf ./dist fixtures/*.d.ts fixtures/*.js source/*.d.ts source/*.js spec/*.d.ts spec/*.js spec/_types/*.d.ts spec/_types/*.js spec/support/*.d.ts spec/support/*.js",
     "eslint": "eslint fixtures source spec",
     "test": "jasmine"
   },
