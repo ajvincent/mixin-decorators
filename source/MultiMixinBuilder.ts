@@ -1,4 +1,3 @@
-// #region preamble
 import type {
   Class
 } from "type-fest";
@@ -18,8 +17,6 @@ import type {
 import type {
   MultiMixinClass
 } from "./types/MultiMixinClass.js";
-
-// #endregion preamble
 
 /**
  * Apply decorators to build the mixin class.
