@@ -75,11 +75,15 @@ function MultiMixinBuilder(decorators, baseClass) {
         let _classDescriptor;
         let _classExtraInitializers = [];
         let _classThis;
-        var class_1 = class extends baseClass {
+        let _classSuper = baseClass;
+        var class_1 = class extends _classSuper {
+            static { _classThis = this; }
+            static { __setFunctionName(_classThis, ""); }
             static {
-                __setFunctionName(this, "");
-                __esDecorate(null, _classDescriptor = { value: this }, _classDecorators, { kind: "class", name: this.name }, null, _classExtraInitializers);
+                const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(_classSuper[Symbol.metadata] ?? null) : void 0;
+                __esDecorate(null, _classDescriptor = { value: _classThis }, _classDecorators, { kind: "class", name: _classThis.name, metadata: _metadata }, null, _classExtraInitializers);
                 class_1 = _classThis = _classDescriptor.value;
+                if (_metadata) Object.defineProperty(_classThis, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
                 __runInitializers(_classThis, _classExtraInitializers);
             }
         };
