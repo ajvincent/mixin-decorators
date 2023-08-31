@@ -6,10 +6,11 @@
   "main": "dist/exports.js",
   "types": "dist/exports.d.ts",
   "scripts": {
-    "all": "npm run clean && npm run build && npm run test && npm run eslint",
+    "all": "npm run clean && npm run build && npm run test && npm run eslint && npm run export",
     "build": "tsc -p ./tsconfig.json",
-    "clean": "rm -rf ./dist fixtures/*.d.ts fixtures/*.js source/*.d.ts source/*.js spec/*.d.ts spec/*.js spec/_types/*.d.ts spec/_types/*.js spec/support/*.d.ts spec/support/*.js",
+    "clean": "rm -rf fixtures/*.d.ts fixtures/*.js source/*.d.ts source/*.js spec/*.d.ts spec/*.js spec/_types/*.d.ts spec/_types/*.js spec/support/*.d.ts spec/support/*.js",
     "eslint": "eslint fixtures source spec",
+    "export": "mkdir dist && cp source/MultiMixinBuilder.js dist/exports.js",
     "test": "jasmine"
   },
   "repository": {

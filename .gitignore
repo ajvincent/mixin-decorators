@@ -6,4 +6,5 @@ node_modules
 !fixtures/**/types/**/*.d.ts
 !source/**/types/**/*.d.ts
 !spec/**/types/**/*.d.ts
-dist/bin
+!dist/exports.js
+!dist/exports.d.ts
