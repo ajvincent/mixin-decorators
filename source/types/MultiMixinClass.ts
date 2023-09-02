@@ -21,8 +21,8 @@ import type {
  * @typeParam Field - the field to extract.
  */
 type ExtractFields<
-  Interfaces extends readonly StaticAndInstance[],
-  Field extends keyof StaticAndInstance
+  Interfaces extends readonly StaticAndInstance<symbol>[],
+  Field extends keyof StaticAndInstance<symbol>
 > = Simplify<UnionToIntersection<TupleToUnion<
   { [key in keyof Interfaces]: Interfaces[key][Field] }
 >>>;
@@ -33,7 +33,7 @@ type ExtractFields<
  * @typeParam Interfaces - the sequence of static and instance interfaces.
  */
 export type MultiMixinClass<
-  Interfaces extends readonly StaticAndInstance[],
+  Interfaces extends readonly StaticAndInstance<symbol>[],
   Base extends Class<object>,
 > =
   StaticAndInstanceArray<Interfaces> extends never ? never :

@@ -1,6 +1,5 @@
 import type {
 	Class,
-	Constructor,
 } from "type-fest";
 
 /**
@@ -19,7 +18,7 @@ export type MixinClass<
 	Arguments extends unknown[] = ConstructorParameters<BaseClass>
 > = (
 	Class<InstanceType<BaseClass> & AddedInstance, Arguments> &
-	Omit<BaseClass, Constructor<typeof BaseClass, ConstructorParameters<BaseClass>>> &
+	Omit<BaseClass, never> &
 	AddedStatic
 );
 

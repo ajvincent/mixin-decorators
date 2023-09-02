@@ -4,7 +4,5 @@ node_modules
 **/*.d.ts
 **/*.d.ts.map
 !fixtures/**/types/**/*.d.ts
-!source/**/types/**/*.d.ts
-!spec/**/types/**/*.d.ts
 !dist/exports.js
 !dist/exports.d.ts
