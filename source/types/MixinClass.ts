@@ -69,7 +69,7 @@ How it works:
 Class<InstanceType<BaseClass> & AddedInstance, Arguments>
 This builds a new class with a new prototype, mixing the results of calling `new BaseClass` with AddedInstance.
 
-Omit<BaseClass, Constructor<typeof BaseClass, ConstructorParameters<BaseClass>>>
+Omit<BaseClass, never>
 This imports static fields and excludes the constructor from the base class.
 
 AddedStatic
