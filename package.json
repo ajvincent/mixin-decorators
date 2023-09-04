@@ -3,14 +3,13 @@
   "version": "0.1.0",
   "description": "Mixin classes via decorators",
   "type": "module",
-  "main": "dist/exports.js",
-  "typings": "dist/exports.d.ts",
+  "main": "source/MultiMixinBuilder.js",
+  "typings": "exports.d.ts",
   "scripts": {
-    "all": "npm run clean && npm run build && npm run test && npm run eslint && npm run export",
+    "all": "npm run clean && npm run build && npm run test && npm run eslint",
     "build": "tsc -p ./tsconfig.json",
-    "clean": "rm -rf fixtures/*.d.ts fixtures/*.js source/*.d.ts source/*.js source/types/*.d.ts source/types/*.js spec/*.d.ts spec/*.js spec/_types/*.d.ts spec/_types/*.js spec/support/*.d.ts spec/support/*.js",
+    "clean": "rm -rf fixtures/*.d.ts fixtures/*.js source/MultiMixinBuilder.d.ts source/MultiMixinBuilder.js spec/*.d.ts spec/*.js spec/_types/*.d.ts spec/_types/*.js spec/support/*.d.ts spec/support/*.js",
     "eslint": "eslint fixtures source spec",
-    "export": "rm -rf dist && mkdir dist && cp source/MultiMixinBuilder.js dist/exports.js",
     "test": "jasmine"
   },
   "repository": {
@@ -42,5 +41,16 @@
   },
   "dependencies": {
     "type-fest": "^4.2.0"
-  }
+  },
+  "files": [
+    "source/MultiMixinBuilder.js",
+    "exports.d.ts",
+
+    "source/MultiMixinBuilder.d.ts",
+    "source/types/ClassDecoratorFunction.d.ts",
+    "source/types/MixinClass.d.ts",
+    "source/types/MultiMixinClass.d.ts",
+    "source/types/StaticAndInstance.d.ts",
+    "source/types/SubclassDecorator.d.ts"
+  ]
 }

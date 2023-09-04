@@ -4,5 +4,7 @@ node_modules
 **/*.d.ts
 **/*.d.ts.map
 !fixtures/**/types/**/*.d.ts
-!dist/exports.js
-!dist/exports.d.ts
+!source/**/types/**/*.d.ts
+!source/MultiMixinBuilder.js
+!source/MultiMixinBuilder.d.ts
+!exports.d.ts
