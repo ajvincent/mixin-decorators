@@ -1,21 +1,22 @@
-export MultiMixinBuilder from "./MultiMixinBuilder.js";
+import MultiMixinBuilder from "./source/MultiMixinBuilder.js";
+export default MultiMixinBuilder;
 
 export type {
   MixinClass
-} from "./types/MixinClass.js";
+} from "./source/types/MixinClass.js";
 
 export type {
   StaticAndInstance
-} from "./types/StaticAndInstance.js";
+} from "./source/types/StaticAndInstance.js";
 
 export type {
   SubclassDecorator,
-} from "./types/SubclassDecorator.js";
+} from "./source/types/SubclassDecorator.js";
 
 export type {
   ClassDecoratorFunction
-} from "./types/ClassDecoratorFunction.js";
+} from "./source/types/ClassDecoratorFunction.js";
 
 export type {
   MultiMixinClass
-} from "./types/MultiMixinClass.js";
+} from "./source/types/MultiMixinClass.js";
