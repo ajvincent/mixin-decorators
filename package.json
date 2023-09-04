@@ -1,6 +1,6 @@
 {
   "name": "mixin-decorators",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Mixin classes via decorators",
   "type": "module",
   "main": "source/MultiMixinBuilder.js",
@@ -45,7 +45,6 @@
   "files": [
     "source/MultiMixinBuilder.js",
     "exports.d.ts",
-
     "source/MultiMixinBuilder.d.ts",
     "source/types/ClassDecoratorFunction.d.ts",
     "source/types/MixinClass.d.ts",
